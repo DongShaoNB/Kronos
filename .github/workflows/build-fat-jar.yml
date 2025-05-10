@@ -1,0 +1,35 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Build Fat Jar
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  shadowJar:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout project sources
+      uses: actions/checkout@v4
+
+    - name: Setup gradle
+      uses: gradle/actions/setup-gradle@v4
+
+    - name: Run shadowJar with Gradle Wrapper
+      run: ./gradlew buildFatJar
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        path: build/libs/*
