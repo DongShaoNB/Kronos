@@ -34,6 +34,7 @@ fun Route.authRouting() {
             val defaultRoleId =
                 systemService.findSettingByKey("default_role_id")
                     ?: return@post call.respond(ResponseCode.INITIALIZE_FIRST)
+            if (!StringUtil.isValidUsername(registerDTO.username)) return@post call.respond(ResponseCode.USERNAME_INVALID)
             if (userService.findUserByUsername(registerDTO.username) != null) return@post call.respond(ResponseCode.USERNAME_IN_USE)
             if (!StringUtil.isValidEmail(registerDTO.email)) return@post call.respond(ResponseCode.EMAIL_INVALID)
             if (userService.findUserByEmail(registerDTO.email) != null) return@post call.respond(ResponseCode.EMAIL_IN_USE)

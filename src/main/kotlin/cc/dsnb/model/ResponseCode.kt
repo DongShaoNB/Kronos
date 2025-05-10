@@ -43,6 +43,11 @@ enum class ResponseCode(
 
     // User errors
     USER_NOT_FOUND(HttpStatusCode.NotFound, 404, "The requested user not found"),
+    USERNAME_INVALID(
+        HttpStatusCode.BadRequest,
+        400,
+        "Usernames can only start with a letter, and all letters must be lowercase."
+    ),
     USERNAME_IN_USE(HttpStatusCode.Conflict, 409, "The requested username is already in use"),
     EMAIL_IN_USE(HttpStatusCode.Conflict, 409, "The requested email is already in use"),
     EMAIL_INVALID(HttpStatusCode.BadRequest, 400, "Invalid email format"),

@@ -31,6 +31,7 @@ fun Route.adminUserRouting() {
         post {
             call.runIfAdmin {
                 val newUser = call.receive<NewUserDTO>()
+                if (!StringUtil.isValidUsername(newUser.username)) return@post call.respond(ResponseCode.USERNAME_INVALID)
                 if (userService.findUserByUsername(newUser.username) != null) return@post call.respond(ResponseCode.USERNAME_IN_USE)
                 if (!StringUtil.isValidEmail(newUser.email)) return@post call.respond(ResponseCode.EMAIL_INVALID)
                 if (userService.findUserByEmail(newUser.email) != null) return@post call.respond(ResponseCode.EMAIL_IN_USE)
