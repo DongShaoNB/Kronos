@@ -25,10 +25,12 @@ fun Route.adminTodoRouting() {
             call.runIfAdmin {
                 try {
                     val newTodoDTO = call.receive<NewTodoDTO>()
-                    if (todoService.findTodoByTitle(newTodoDTO.title) != null) return@post call.respond(ResponseCode.TODO_TITLE_IN_USE)
                     val dueDate = if (newTodoDTO.dueDate != null) LocalDate.parse(newTodoDTO.dueDate) else null
                     if (newTodoDTO.userId == null) return@post call.respond(ResponseCode.REQUIRED_USER_ID)
                     if (userService.findUserById(newTodoDTO.userId) == null) return@post call.respond(ResponseCode.USER_NOT_FOUND)
+                    if (todoService.findTodoByTitle(newTodoDTO.title)
+                            .any { it.userId.value == newTodoDTO.userId }
+                    ) return@post call.respond(ResponseCode.TODO_TITLE_IN_USE)
                     val todoDTO = todoService.createTodo(
                         newTodoDTO.title,
                         newTodoDTO.description,

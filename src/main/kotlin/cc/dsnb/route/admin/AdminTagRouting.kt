@@ -24,6 +24,9 @@ fun Route.adminTagRouting() {
                 val newTagDTO = call.receive<NewTagDTO>()
                 if (newTagDTO.userId == null) return@post call.respond(ResponseCode.REQUIRED_USER_ID)
                 if (userService.findUserById(newTagDTO.userId) == null) return@post call.respond(ResponseCode.USER_NOT_FOUND)
+                if (tagService.findTagByName(newTagDTO.name)
+                        .any { it.userId.value == newTagDTO.userId }
+                ) return@post call.respond(ResponseCode.TAG_NAME_IN_USE)
                 val tagDTO = tagService.createTag(newTagDTO.name, newTagDTO.description, newTagDTO.userId).toDTO()
                 call.respond(ResponseCode.CREATED, tagDTO)
             }
