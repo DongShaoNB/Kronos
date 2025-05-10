@@ -46,7 +46,7 @@ enum class ResponseCode(
     USERNAME_INVALID(
         HttpStatusCode.BadRequest,
         400,
-        "Usernames can only start with a letter, and all letters must be lowercase."
+        "The username can only start with letter, be between 3 and 20 characters long, and all letters must be lowercase"
     ),
     USERNAME_IN_USE(HttpStatusCode.Conflict, 409, "The requested username is already in use"),
     EMAIL_IN_USE(HttpStatusCode.Conflict, 409, "The requested email is already in use"),

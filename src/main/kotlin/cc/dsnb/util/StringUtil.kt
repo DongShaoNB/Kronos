@@ -4,7 +4,7 @@ object StringUtil {
 
     fun isValidUsername(username: String): Boolean {
         val usernameRegex = Regex("""^[a-z][a-z0-9]*$""")
-        return usernameRegex.matches(username)
+        return usernameRegex.matches(username) && username.length in 3..20
     }
 
     fun isValidEmail(email: String): Boolean {
