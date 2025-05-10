@@ -15,7 +15,7 @@ on:
 
 jobs:
 
-  shadowJar:
+  build:
 
     runs-on: ubuntu-latest
 
