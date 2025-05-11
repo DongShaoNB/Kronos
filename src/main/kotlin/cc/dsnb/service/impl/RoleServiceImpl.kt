@@ -1,9 +1,10 @@
-package cc.dsnb.service
+package cc.dsnb.service.impl
 
 import cc.dsnb.database.table.RoleTable
 import cc.dsnb.model.dao.RoleDAO
 import cc.dsnb.model.dto.role.ReplaceRoleDTO
 import cc.dsnb.model.dto.role.UpdateRoleDTO
+import cc.dsnb.service.RoleService
 import org.jetbrains.exposed.sql.transactions.transaction
 
 class RoleServiceImpl : RoleService {

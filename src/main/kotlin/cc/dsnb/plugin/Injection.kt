@@ -1,15 +1,7 @@
 package cc.dsnb.plugin
 
-import cc.dsnb.service.SystemService
-import cc.dsnb.service.SystemServiceImpl
-import cc.dsnb.service.RoleService
-import cc.dsnb.service.RoleServiceImpl
-import cc.dsnb.service.UserService
-import cc.dsnb.service.UserServiceImpl
-import cc.dsnb.service.TagService
-import cc.dsnb.service.TagServiceImpl
-import cc.dsnb.service.TodoService
-import cc.dsnb.service.TodoServiceImpl
+import cc.dsnb.service.*
+import cc.dsnb.service.impl.*
 import io.ktor.server.application.*
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf

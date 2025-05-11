@@ -1,4 +1,4 @@
-package cc.dsnb.service
+package cc.dsnb.service.impl
 
 import at.favre.lib.crypto.bcrypt.BCrypt
 import cc.dsnb.database.table.UserTable
@@ -7,6 +7,7 @@ import cc.dsnb.model.dao.UserDAO
 import cc.dsnb.model.dto.user.AdminUpdateUserDTO
 import cc.dsnb.model.dto.user.CommonUpdateUserDTO
 import cc.dsnb.model.dto.user.ReplaceUserDTO
+import cc.dsnb.service.UserService
 import cc.dsnb.util.EmailUtil
 import cc.dsnb.util.RedisUtil
 import io.lettuce.core.ExperimentalLettuceCoroutinesApi

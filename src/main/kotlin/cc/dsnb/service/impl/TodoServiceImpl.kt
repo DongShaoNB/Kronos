@@ -1,4 +1,4 @@
-package cc.dsnb.service
+package cc.dsnb.service.impl
 
 import cc.dsnb.database.table.TagTable
 import cc.dsnb.database.table.TodoTable
@@ -7,6 +7,7 @@ import cc.dsnb.model.dao.TodoDAO
 import cc.dsnb.model.dao.UserDAO
 import cc.dsnb.model.dto.todo.ReplaceTodoDTO
 import cc.dsnb.model.dto.todo.UpdateTodoDTO
+import cc.dsnb.service.TodoService
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.deleteWhere
 import org.jetbrains.exposed.sql.insert
