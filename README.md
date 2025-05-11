@@ -1,6 +1,6 @@
 # Kronos
 
-Kronos 是一个 Todo 系统，后端使用 **Ktor** + **Exposed** + **Lettuce** 构建的高性能后端服务骨架。前端预计使用 [Kuikly]("[Tencent-TDS/KuiklyUI](https://github.com/Tencent-TDS/KuiklyUI)")，目前仍在开发中...
+Kronos 是一个 Todo 系统，后端使用 **Ktor** + **Exposed** + **Lettuce** 构建的高性能后端服务骨架。前端预计使用 [Kuikly](https://github.com/Tencent-TDS/KuiklyUI)，目前仍在开发中...
 
 ## 功能
 
@@ -33,7 +33,7 @@ Kronos 是一个 Todo 系统，后端使用 **Ktor** + **Exposed** + **Lettuce**
 > [!WARNING]  
 > 请务必重命名 application.yaml 为其他名字，至少不能是 application.yaml
 
-2. 下载 [application.yaml]("https://github.com/DongShaoNB/Kronos/blob/main/src/main/resources/application.yaml") 文件，重命名为 `config.yaml` 放在 Kronos.jar 同一目录下，根据情况进行修改配置
+2. 下载 [application.yaml](https://github.com/DongShaoNB/Kronos/blob/main/src/main/resources/application.yaml) 文件，重命名为 `config.yaml` 放在 Kronos.jar 同一目录下，根据情况进行修改配置
 
 
 3. 启动 Kronos 并指定配置文件
@@ -53,4 +53,4 @@ java -jar Kronos.jar -config="config.yaml"
 
 ## 协议
 
-本项目采用 GPL v3.0 协议，详见 [LICENSE]("LICENSE")
+本项目采用 GPL v3.0 协议，详见 [LICENSE](LICENSE)
