@@ -1,40 +1,56 @@
 # Kronos
 
-This project was created using the [Ktor Project Generator](https://start.ktor.io).
+Kronos 是一个 Todo 系统，后端使用 **Ktor** + **Exposed** + **Lettuce** 构建的高性能后端服务骨架。前端预计使用 [Kuikly]("[Tencent-TDS/KuiklyUI](https://github.com/Tencent-TDS/KuiklyUI)")，目前仍在开发中...
 
-Here are some useful links to get you started:
+## 功能
 
-- [Ktor Documentation](https://ktor.io/docs/home.html)
-- [Ktor GitHub page](https://github.com/ktorio/ktor)
-- The [Ktor Slack chat](https://app.slack.com/client/T09229ZC6/C0A974TJ9). You'll need
-  to [request an invite](https://surveys.jetbrains.com/s3/kotlin-slack-sign-up) to join.
+- 使用 Exposed ORM 简化与 MySQL 的数据交互
+- 通过 Lettuce 驱动进行 Redis 管理
+- 支持 Kotlin 协程，提供非阻塞异步处理
+- 可扩展的模块化结构，便于后续功能集成
 
-## Features
+## 环境要求
 
-Here's a list of features included in this project:
+- JDK 11+
+- MySQL 8+
+- Redis 5+
 
-| Name                                               | Description                                                 |
-|----------------------------------------------------|-------------------------------------------------------------|
-| [Routing](https://start.ktor.io/p/routing-default) | Allows to define structured routes and associated handlers. |
+## 快速开始
 
-## Building & Running
+1. 通过 GitHub Actions 下载或本地自行构建 Fat Jar
+	
+	1. 克隆仓库：
+	  ```shell
+	  git clone https://github.com/DongShaoNB/Kronos.git
+	  cd Kronos
+	  ```
+	2. 构建 Fat Jar
+	  ```shell
+	  ./gradlew buildFatJar
+	  ```
+	3. Fat Jar 输出在 `build/libs/Kronos-*.*.*.jar`
 
-To build or run the project, use one of the following tasks:
+> [!WARNING]  
+> 请务必重命名 application.yaml 为其他名字，至少不能是 application.yaml
 
-| Task                          | Description                                                          |
-|-------------------------------|----------------------------------------------------------------------|
-| `./gradlew test`              | Run the tests                                                        |
-| `./gradlew build`             | Build everything                                                     |
-| `buildFatJar`                 | Build an executable JAR of the server with all dependencies included |
-| `buildImage`                  | Build the docker image to use with the fat JAR                       |
-| `publishImageToLocalRegistry` | Publish the docker image locally                                     |
-| `run`                         | Run the server                                                       |
-| `runDocker`                   | Run using the local docker image                                     |
+2. 下载 [application.yaml]("https://github.com/DongShaoNB/Kronos/blob/main/src/main/resources/application.yaml") 文件，重命名为 `config.yaml` 放在 Kronos.jar 同一目录下，根据情况进行修改配置
 
-If the server starts successfully, you'll see the following output:
 
+3. 启动 Kronos 并指定配置文件
+```shell
+java -jar Kronos.jar -config="config.yaml"
 ```
-2024-12-04 14:32:45.584 [main] INFO  Application - Application started in 0.303 seconds.
-2024-12-04 14:32:45.682 [main] INFO  Application - Responding at http://0.0.0.0:8080
-```
 
+## 贡献指南
+
+欢迎提交 issue 和 pull request：
+
+1. Fork 本仓库
+2. 新建分支：`git checkout -b feature/新功能`
+3. 提交修改：`git commit -m "Add new feature"`
+4. 推送到远程：`git push origin feature/新功能`
+5. 创建 Pull Request
+
+## 协议
+
+本项目采用 GPL v3.0 协议，详见 [LICENSE]("LICENSE")
