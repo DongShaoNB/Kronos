@@ -1,0 +1,37 @@
+ktor:
+  deployment:
+    host: 0.0.0.0
+    port: 7251
+  application:
+    modules:
+      - cc.dsnb.ApplicationKt.module
+
+database:
+  driver: "com.mysql.cj.jdbc.Driver"
+  url: "jdbc:mysql://127.0.0.1:3306/kronos"
+  user: kronos
+  password: kronos
+  maxPoolSize: 6
+
+redis:
+  # If redis has no password, just delete it and "@"
+  url: "redis://password@localhost:6379"
+
+jwt:
+  secret: "Please enter a random string here"
+  issuer: "http://0.0.0.0:7251/"
+  audience: "http://0.0.0.0:7251/auth/login"
+  realm: "Access to 'user'"
+
+mail:
+  smtp:
+    host: "smtp.exmail.qq.com"
+    port: 465
+    email: "i@dsnb.cc"
+    auth: true
+    username: "i@dsnb.cc"
+    password: "password"
+    ssl:
+      enable: true
+    starttls:
+      enable: false
