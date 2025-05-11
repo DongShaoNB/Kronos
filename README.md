@@ -2,6 +2,9 @@
 
 Kronos 是一个 Todo 系统，后端使用 **Ktor** + **Exposed** + **Lettuce** 构建的高性能后端服务骨架。前端预计使用 [Kuikly](https://github.com/Tencent-TDS/KuiklyUI)，目前仍在开发中...
 
+## 文档
+[Kronos API 文档](https://api-docs.kronos.dsnb.cc/)
+
 ## 功能
 
 - 使用 Exposed ORM 简化与 MySQL 的数据交互
