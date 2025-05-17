@@ -10,8 +10,8 @@ fun Application.configureRouting() {
     routing {
         route("api") {
             authRouting()
-            systemRouting()
             authenticate("auth-jwt") {
+                systemRouting()
                 roleRouting()
                 userRouting()
                 tagRouting()
