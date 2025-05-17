@@ -64,6 +64,10 @@ dependencies {
     // Coroutines
     runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
     runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-reactive:1.10.2")
+    // AI
+    implementation("io.ktor:ktor-client-core:${ktor_version}")
+    implementation("io.ktor:ktor-client-cio:${ktor_version}")
+    implementation("com.aallam.openai:openai-client:4.0.1")
     // Other
     implementation("at.favre.lib:bcrypt:0.10.2")
     implementation("ch.qos.logback:logback-classic:$logback_version")

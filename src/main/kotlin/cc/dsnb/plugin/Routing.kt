@@ -16,6 +16,7 @@ fun Application.configureRouting() {
                 userRouting()
                 tagRouting()
                 todoRouting()
+                aiRouting()
                 route("admin") {
                     adminRoleRouting()
                     adminUserRouting()

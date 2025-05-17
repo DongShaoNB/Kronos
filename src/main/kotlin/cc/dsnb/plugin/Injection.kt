@@ -16,6 +16,7 @@ fun Application.configureInjection() {
         singleOf(::UserServiceImpl) { bind<UserService>() }
         singleOf(::TagServiceImpl) { bind<TagService>() }
         singleOf(::TodoServiceImpl) { bind<TodoService>() }
+        singleOf(::AIServiceImpl) { bind<AIService>() }
     }
     install(Koin) {
         slf4jLogger()
